@@ -1,0 +1,3325 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/qq_15267543/article/details/102930590"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"FLV-java你所关心的，我这里都有。附源码。非FFmpeg相关，纯java人肉解析。手写FLV。H264 AAC转FLV - qq_15267543的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>FLV-java你所关心的，我这里都有。附源码。非FFmpeg相关，纯java人肉解析。手写FLV。H264 AAC转FLV - qq_15267543的博客 - CSDN博客</title>
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-9d598f9e3f.min.css">
+            
+    
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-c9d2f651cc.min.css">
+    
+<!--    自定义皮肤样式-->
+    
+    <script type="text/javascript">
+        var username = "qq_15267543";
+        var blog_address = "https://blog.csdn.net/qq_15267543";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/qq_15267543/article/details/102930590"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin3-template";
+        // 收藏所需数据
+        var articleTitle = "FLV-java你所关心的，我这里都有。附源码。非FFmpeg相关，纯java人肉解析。手写FLV。H264 AAC转FLV";
+        var articleDesc = "第一次写博客，不知道有没有什么潜规则。总之呢，是好是坏都已经在落笔的那一刻开始了。说起直播，各位都不陌生，毕竟国内这几年直播，短视频等视频行业大火，让所有程序员对直播都能如数家珍，随口便能讲出几种协议：RTMP,RTSP,RTP,HLS,flv等等等。rtsp到目前还依旧火爆比如ipCamera各种监控摄像头比如海康之类的都是rtsp。说起RTMP和RTSP，不得不...";
+        // 第四范式所需数据
+        var articleTitles = "FLV-java你所关心的，我这里都有。附源码。非FFmpeg相关，纯java人肉解析。手写FLV。H264 AAC转FLV - qq_15267543的博客";
+        
+        var nickName = "安卓界的小学生";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/qq_15267543/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/qq_15267543/article/details/102930590";
+        var isShowThird = "0"
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!--js引用-->
+            <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js,lib/fingerprintjs2/2.1.0/fingerprint2.min.js,report/1.1.1/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<div id="kp_box_476" data-pid="476"><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1562571946902.png',bigMoveImg:'https://img-bss.csdn.net/1562222165354.png',link:'https://kunyu.csdn.net?d=2&m=SntcQALJtnEQHcJbDLmHAnJEpctEQLXppUSiHfyXJHJDUAbAXnLnApJptHJQEWnLtnLQXJbcbApcbppEQyStvbbLvbAHAivpAtQQ&k=&dest=https%3A%2F%2Fedu.csdn.net%2Ftopic%2Fai30%3Futm_source%3Dblogpopup2',trackSuperId:476,smallMove:'notMove',trackSId:1063});</script><img class="pre-img-lasy" data-src='https://kunyu.csdn.net/1.png?d=2&k=&m=SntcQALJtnEQHcJbDLmHAnJEpctEQLXppUSiHfyXJHJDUAbAXnLnApJptHJQEWnLtnLQXJbcbApcbppEQyStvbbLvbAHAivpAtQQ'></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="main_father clearfix d-flex justify-content-center" style="height:100%;"> 
+    <div class="container clearfix" id="mainBox">
+        <div  class='space_container'></div>
+        <main>
+            <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原创</span>                <h1 class="title-article">FLV-java你所关心的，我这里都有。附源码。非FFmpeg相关，纯java人肉解析。手写FLV。H264 AAC转FLV</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                            <span class="c-gray">置顶</span>
+                                                                                                                                                                <span class="time">2019-11-06 10:42:04</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/qq_15267543" target="_blank" rel="noopener">安卓界的小学生</a>
+                    <span class="read-count">阅读数 129</span>
+                                                                    <div class="tags-box space">
+                                <span class="label">分类专栏：</span>
+                                                                                                            <a class="tag-link" target="_blank" rel="noopener"
+                                           href="https://blog.csdn.net/qq_15267543/article/category/6496062">
+                                            android                                        </a>
+                                                                                                                                                <a class="tag-link" target="_blank" rel="noopener"
+                                           href="https://blog.csdn.net/qq_15267543/article/category/9489954">
+                                            java                                        </a>
+                                                                                                                                                <a class="tag-link" target="_blank" rel="noopener"
+                                           href="https://blog.csdn.net/qq_15267543/article/category/9489955">
+                                            协议解析                                        </a>
+                                                                                                </div>
+                                        </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+                <div id="article_content" class="article_content clearfix">
+                                                <div class="article-copyright">
+                <span class="creativecommons">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                    </a>
+            <span>
+                版权声明：本文为博主原创文章，遵循<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener"> CC 4.0 BY-SA </a>版权协议，转载请附上原文出处链接和本声明。            </span>
+               <div class="article-source-link2222">
+                    本文链接：<a href="https://blog.csdn.net/qq_15267543/article/details/102930590">https://blog.csdn.net/qq_15267543/article/details/102930590</a>
+                </div>
+            </span>
+                    </div>
+                                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css" />
+                                        <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-d284373521.css" />
+                <div class="htmledit_views" id="content_views">
+                                            <p>    第一次写博客，不知道有没有什么潜规则。总之呢，是好是坏都已经在落笔的那一刻开始了。</p>
+
+<p>    说起直播，各位都不陌生，毕竟国内这几年直播，短视频等视频行业大火，让所有程序员对直播都能如数家珍，随口便能讲出几种协议：RTMP,RTSP,RTP,HLS,flv等等等。rtsp到目前还依旧火爆比如ipCamera各种监控摄像头比如海康之类的都是rtsp。</p>
+
+<p>    说起RTMP和RTSP，不得不有个头疼的问题：想要在网页端播放需要借助flash。众所周知，谷歌和微软都共同宣布了将在近期内停止flash的使用。尤其是谷歌浏览器想要弹出flash需要反复点击甚是恶心。而bilibili开源的flv.js也有几年了。所以也是该换换协议让网页端不在使用flash了。</p>
+
+<p>   本篇文章适用于H264+AAC to flv相关的java工作者免除FFmpeg的痛苦。另外也适合行车记录仪相关工作者的使用，毕竟mp4录制的视频会在突然断电的一刻导致视频文件无法播放，而flv不会。</p>
+
+<p>    本文所讲的FLV是缩减版FLV不是完全版的。是可以用来录像+直播使用。而不是完全讲解FLV。</p>
+
+<p>    进入正题：H264+AAC to FLV 或 H264 to FLV 或 AAC to FLV！！！</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>   FLV是一个轻巧型视频格式，因为FLV的数据格式里没有过多地添加多余符号，几乎是接近于数据流裸流的格式，而且因为flv的数据格式在头上，所以中间即使突然断了丢失数据了也能播放，这是flv的优点。我们来看看FLV的大概格式样子：</p>
+
+<p>                                                         FLV-Header(9字节)固定头 +FLV-Body</p>
+
+<p> </p>
+
+<h2>FLV-Header</h2>
+
+<p>  要注意1个bit，其他都可以是固定写法。这9字节里面的第5个字节的从右往左数第3bit和第1bit需要注意</p>
+
+<p>  如果：0000 0101 则是有音频也有视频</p>
+
+<p>             0000 0100 则是纯音频</p>
+
+<p>             0000 0001 则是纯视频</p>
+
+<p>  所以，头字节可以表示为</p>
+
+<p>      0x46  0x4C  0x56 0x01 0x05 0x00 0x00 0x00 0x09 这是有视频也有音频的</p>
+
+<p>      0x46  0x4C  0x56 0x01 0x04 0x00 0x00 0x00 0x09 这是只有音频的</p>
+
+<p>      0x46  0x4C  0x56 0x01 0x01 0x00 0x00 0x00 0x09 这是只有视频的</p>
+
+<h2>FLV-Body</h2>
+
+<p>         flv-body里包含3种Tag，分别是：视频Tag、音频Tag、脚本Tag。都说脚本Tag信息重要，但是如果你是H264+AAC的话，是不需要脚本Tag。因为H264和aac 都有自己的格式头所以这里不需要脚本Tag（是文件、http流、socket流、webSocket流里都不需要脚本Tag）</p>
+
+<p>           先说说FLV-Body大致格式：</p>
+
+<p>                   Tag类型（1字节）+ 数据区长度(3字节) + 时间戳（3字节）+ 时间戳扩展（1字节）+ StreamsID（3字节）+ 数据区(数据区长度个字节) + 此Tag总长度（4字节）</p>
+
+<p>                   其中Tag类型有：0x08：音频       0x09：视频       0x12脚本帧（这里不讲）</p>
+
+<p>                          数据区长度：这个只是数据区长度 不包含后面的Tag总长度  和数据区之前的数据长度</p>
+
+<p>                          时间戳和时间戳扩展：这个可以理解为 4字节byte[]中 byte[0] 为时间戳扩展  byte[1]+byte[2]+byte[3]为时间戳</p>
+
+<p>                          StreamsID：3个字节万年为0x00 0x00 0x00</p>
+
+<p>    </p>
+
+<h3>第一个videoTag：</h3>
+
+<p>                （此包需要包含H264的sps和pps，该包极其重要，如果没有则无法显示画面或花瓶）</p>
+
+<p>                   0x09 + 数据区长度(3字节) + 0x00  0x00  0x00  0x00  0x00 0x00 0x00 + 数据区 +本videoTag总长度(4字节)</p>
+
+<p>             数据区：</p>
+
+<p>                      帧类别(1字节) + AVCPacketType（1字节）+  时间戳(3字节) + Version(固定为0x01) + ProfileCompact(3字节) + 固定2字节(0xFF  0xE1) + sps长度(2字节) + sps数据(长度取前面的sps长度) + 固定1字节(0x01) + pps长度(2字节) + pps数据</p>
+
+<p>             其中：帧类别为0x17或者0x27   7代表x264编码 AVC(H264)  1和2代表关键帧和非关键帧 第一个videoTag一定是关键帧所以是0x17</p>
+
+<p>                       AVCPacketType : 如果填写0x00 则代表是第一个videoTag 因为0x00是AVC sequence header 代表着该帧包含h264的sps和pps 后续videoTag帧全都填写0x01</p>
+
+<p>                       ProfileCompact：其实就是sps字节数组里 从第一位到第四位:sps[1]+sps[2]+sps[3]</p>
+
+<p>                       sps数据：sps数组从sps[0]-sps[sps.length]</p>
+
+<p>              第一个videoTag例子（舍掉0x）</p>
+
+<p>             09 00 00 21 00 00 00 00 00 00 00 17 00 00 00 00 01 42 80 16 FF E1 00 0D 67 42 80 16 E9 01 40 7B 40 36 85 09 A8 01 00 04 68 CE 06 E2 00 00 00 28</p>
+
+<p> </p>
+
+<h3>后续videoTag</h3>
+
+<p>           和第一帧videoTag大致是相同的这里需要注意的是时间戳不能往回减少，只能增加</p>
+
+<p>            这里只说与第一帧不同之处</p>
+
+<p>           帧类别：需要根据H264数据进行判断是否是关键帧，如果是关键帧还是输入0x17,如果是非关键帧填写0x27</p>
+
+<p>          AVCPacketType：固定填写0x01</p>
+
+<p> </p>
+
+<h3>audioTag</h3>
+
+<p>        （这里是AAC的头部，一般这个帧会非常短）</p>
+
+<p>          0x08 + 数据区长度(3字节) + 0x00  0x00  0x00  0x00  0x00 0x00 0x00 + 数据区 +本audioTag总长度(4字节)</p>
+
+<p>          数据区：固定1字节(AF) + 本音频帧类型(1字节) + AAC数据</p>
+
+<p>                       本音频帧类型：如果是第一个音频帧需要写入AAC头数据 这里填写0x00 。如果不是第一帧这里填写0x01</p>
+
+<p>                       AAC数据：我这边android编译出来的第一个头数据只有2个字节：0x12 0x10</p>
+
+<p>          第一个audioTag例子（舍掉0x）</p>
+
+<p>                 08 00 00 04 00 00 00 00 00 00 00 AF 00 12 10 00 00 00 0F</p>
+
+<p> </p>
+
+<p>         后续audioTag帧和第一个只有音频帧类型不同 改为0x01即可</p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p>   说到这里，完整的FLV解析就分析完毕了。按照分析的样子转换成代码即可。该偏文章适合于android端不使用FFmpeg将MediaCode编码出来的H264+AAC转成flv格式视频。同时也适用于java后端人员使用该方法 将其他设备将RTP RTSP RTMP之类的流按照对应协议取出H264和aac 然后转化成flv利用webSocket推给前端flv.js播放实现去掉flash控件的目的。</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>说到这里，在介绍几个小技巧</p>
+
+<p>   1、flv视频剪切，可以按照时间戳找到最近关键帧进行重新拼写（记得要加flv头）</p>
+
+<p>   2、实现快放和慢放：其实是可以在写时间戳的时候 不按照正常时间戳填写 而是等比例缩短或者延长时间戳即可实现</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>源码里实现了  H264+AAC to FLV 或 H264 to FLV 或 AAC to FLV   和flv的剪切（其中剪切没有经过测试，不过应该是好用的。其他均已经在项目中使用了，很稳定）</p>
+
+<p>如果本文内容有错误请在下方评论里指出，本人只是个普通程序员知识不多难免出错，如果有误导您的地方，还望海涵。</p>
+
+<p>如果本文对你有帮助，请给博主一个大大的赞！！ 另外博主比较懒，所以更新不会太频繁。如果有时间后续会依次推出用纯java代码截取rtp 和rtsp rtmp的h264和aac等相关信息</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>源码在这里：<a href="https://github.com/yuxitong/AndroidLivePusher" rel="nofollow" data-token="4fb4851a5e23b60bba51aceb33aeb2fe">https://github.com/yuxitong/AndroidLivePusher</a></p>
+                                    </div>
+                    </div>
+    </article>
+    <div class="postTime"> 
+        <div class="article-bar-bottom">
+            <span class="time">
+                文章最后发布于: 2019-11-06 15:20:27            </span>
+        </div>
+    </div>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_15267543/article/details/102930590","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_15267543/article/details/102930590","strategy":"readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+                <!--打赏开始-->
+                            <div class="reward-user-box">
+                    <span class="reward-word" style="color:#B4B4B4 !important">有 <span class="num">0</span> 个人打赏</span>
+                                    </div>
+                        <!--打赏结束-->
+            <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58"><div style="width:100%;background:#fff;">
+<script type="text/javascript" src="//rabc1.iteye.com/production/resource/web/6xwm4l.js?lg=ydmpioh"></script>
+</div><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=58&a=386&c=0&k=&d=1&t=3&u=667ea00fcfed467a9f695d7dee55f67a"></div></div>            
+            <a id="commentBox"></a>
+<div class="comment-box">
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank" rel="noopener">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="102930590">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn" rel="noopener">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+                                        <span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+            <div class="recommend-box">
+                                    <div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/gisam/article/details/77573281","strategy":"OPENSEARCH","index":"0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/gisam/article/details/77573281" target="_blank"  rel="noopener" title="FLV视频合并-JAVA代码">
+		<h4 class="text-truncate oneline">
+				FLV视频合并-JAVA代码		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					438</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/gisam/article/details/77573281" target="_blank" rel="noopener" title="FLV视频合并-JAVA代码">
+				<span class="desc oneline">由于项目需要，自己编码了视频合并的JAVA代码FLV视频合并-JAVA代码</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/gisam">来自：	<span class="blog_title"> 未来国的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/winshining/article/details/79492099","strategy":"OPENSEARCH","index":"1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/winshining/article/details/79492099" target="_blank"  rel="noopener" title="基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（二）">
+		<h4 class="text-truncate oneline">
+				基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（二）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/winshining/article/details/79492099" target="_blank" rel="noopener" title="基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（二）">
+				<span class="desc oneline">由于《基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（一）》内容已经很长，所以后续的更新将记录在这儿。非常感谢网友们的测试反馈和代码...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/winshining">来自：	<span class="blog_title"> winshining的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/winshining/article/details/81512775","strategy":"OPENSEARCH","index":"2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/winshining/article/details/81512775" target="_blank"  rel="noopener" title="基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（三）">
+		<h4 class="text-truncate oneline">
+				基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（三）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3622</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/winshining/article/details/81512775" target="_blank" rel="noopener" title="基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（三）">
+				<span class="desc oneline">接上一篇《基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（二）》内容。项目地址：https://github.com/winshin...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/winshining">来自：	<span class="blog_title"> winshining的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/winshining/article/details/74910586","strategy":"OPENSEARCH","index":"3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/winshining/article/details/74910586" target="_blank"  rel="noopener" title="基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（一）">
+		<h4 class="text-truncate oneline">
+				基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（一）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/winshining/article/details/74910586" target="_blank" rel="noopener" title="基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（一）">
+				<span class="desc oneline">本文后续的内容将在这里更新：《基于nginx-rtmp-module模块实现的HTTP-FLV直播模块nginx-http-flv-module（二）》。注意：下文的配置很多已经不能用了，因为现在的实...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/winshining">来自：	<span class="blog_title"> winshining的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_59" data-pid="59"><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=59&a=78&c=0&k=&d=1&t=3&u=bcb43edbb9014ab894aa5d0d3a452ed2"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/caowenjing123/article/details/94623466","strategy":"OPENSEARCH","index":"4"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/caowenjing123/article/details/94623466" target="_blank"  rel="noopener" title="nginx +rtmp+nginx-http-flv-module 环境搭建">
+		<h4 class="text-truncate oneline">
+				nginx +rtmp+nginx-http-flv-module 环境搭建		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					663</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/caowenjing123/article/details/94623466" target="_blank" rel="noopener" title="nginx +rtmp+nginx-http-flv-module 环境搭建">
+				<span class="desc oneline">nginx+rtmp+nginx-http-flv-module环境搭建注：因为RTMP,HLS都会存在这样那样的缺点，为了更好的解决延时问题、拉流兼容性问题，所以我们准备用flv.js进行拉流。1、...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/caowenjing123">来自：	<span class="blog_title"> caowenjing123的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/string_kai/article/details/100598268","strategy":"OPENSEARCH","index":"5"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/string_kai/article/details/100598268" target="_blank"  rel="noopener" title="【入门】无插件web直播解决方案，ffmpeg+nginx-http-flv-module+flv.js">
+		<h4 class="text-truncate oneline">
+				【入门】无插件web直播解决方案，ffmpeg+nginx-http-flv-module+flv.js		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					406</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/string_kai/article/details/100598268" target="_blank" rel="noopener" title="【入门】无插件web直播解决方案，ffmpeg+nginx-http-flv-module+flv.js">
+				<span class="desc oneline">概述这几天一直在搭建一个web端的直播平台，需求是无插件，低延迟，开源免费。但是网上的教程，大多比较零散，没有整合成一套解决方案。所以搜索了很多资料，也问了不少群里的大佬。本篇博客是一个资源整合贴，也...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/string_kai">来自：	<span class="blog_title"> stringKai的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Car_eye/article/details/79951950","strategy":"OPENSEARCH","index":"6"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Car_eye/article/details/79951950" target="_blank"  rel="noopener" title="Car-eye-http-flv-module 实现nginx-rtmp-mudule HTTP方式的FLV直播功能">
+		<h4 class="text-truncate oneline">
+				Car-eye-http-flv-module 实现nginx-rtmp-mudule HTTP方式的FLV直播功能		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					355</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Car_eye/article/details/79951950" target="_blank" rel="noopener" title="Car-eye-http-flv-module 实现nginx-rtmp-mudule HTTP方式的FLV直播功能">
+				<span class="desc oneline">nginx-rtmp-muduleRTMP是一款优秀的RTMP服务器，客户端采用FLASH插件或者HLS，但flash插件消耗资源大，HLS延迟严重。nginx-rtmp-mudule不支持HTTP方...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/Car_eye">来自：	<span class="blog_title"> Car_eye的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/rain_meter/article/details/88127209","strategy":"OPENSEARCH","index":"7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/rain_meter/article/details/88127209" target="_blank"  rel="noopener" title="搭建 基于nginx-http-flv-module的服务，通过flv.js进行网页直播">
+		<h4 class="text-truncate oneline">
+				搭建 基于nginx-http-flv-module的服务，通过flv.js进行网页直播		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1288</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/rain_meter/article/details/88127209" target="_blank" rel="noopener" title="搭建 基于nginx-http-flv-module的服务，通过flv.js进行网页直播">
+				<span class="desc oneline">笔者搭建服务的环境如下：1、Ubuntu18.04.1LTS\n\l已安装ffmpeg3.4.4相关可能需要的依赖已安装如下：		sudoapt-getupdate		sudoapt-getinsta...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/rain_meter">来自：	<span class="blog_title"> rain_meter的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zhengbin6072/article/details/79087967","strategy":"OPENSEARCH","index":"8"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhengbin6072/article/details/79087967" target="_blank"  rel="noopener" title="srs的http-flv拉流源码源码解析">
+		<h4 class="text-truncate oneline">
+				srs的http-flv拉流<em>源码</em><em>源码</em>解析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1432</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhengbin6072/article/details/79087967" target="_blank" rel="noopener" title="srs的http-flv拉流源码源码解析">
+				<span class="desc oneline">http-flv的主要处理逻辑在srs_app_http_conn.cpp，srs_app_http_stream.cpp，srs_http_stack.cpp文件zhong，http-flv拉流请求...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhengbin6072">来自：	<span class="blog_title"> Lucifer的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_60" data-pid="60"><iframe  src="https://adaccount.csdn.net/#/preview/264?m=JpicitQLSnQHAEpciiEAESiDLynHcJtSLLQbnmEXJHpnbXJnQHDLbnbpXSLJfSEESHJEQbWEcAnJDfJAtfQiSfSEopoEiHntUiQQ&k=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?d=2&k=&m=JpicitQLSnQHAEpciiEAESiDLynHcJtSLLQbnmEXJHpnbXJnQHDLbnbpXSLJfSEESHJEQbWEcAnJDfJAtfQiSfSEopoEiHntUiQQ"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/winshining/article/details/101225551","strategy":"OPENSEARCH","index":"9"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/winshining/article/details/101225551" target="_blank"  rel="noopener" title="在nginx-http-flv-module中支持H.265（HEVC）">
+		<h4 class="text-truncate oneline">
+				在nginx-http-flv-module中支持H.265（HEVC）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					171</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/winshining/article/details/101225551" target="_blank" rel="noopener" title="在nginx-http-flv-module中支持H.265（HEVC）">
+				<span class="desc oneline">众所周知，FLV规范不支持H.265，并且近年来各大浏览器都逐渐不支持Flash，Adobe也宣布到2020年底不再支持Flash。作为FLV相关技术的所有者，Adobe估计也没动力更新规范来支持H....</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/winshining">来自：	<span class="blog_title"> winshining的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/lxbin/article/details/4458261","strategy":"OPENSEARCH","index":"10"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/lxbin/article/details/4458261" target="_blank"  rel="noopener" title="JW-FLV-Media-Player 问题索引【常见问题及解决方案】">
+		<h4 class="text-truncate oneline">
+				JW-FLV-Media-Player 问题索引【常见问题及解决方案】		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3596</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lxbin/article/details/4458261" target="_blank" rel="noopener" title="JW-FLV-Media-Player 问题索引【常见问题及解决方案】">
+				<span class="desc oneline">最近在做FLV视频相关的东西，一直在找合适的FLV播放器，单单这个过程就经历了很长时间，最终决定用JW-FLV-Media-Player(以下称JW)。JW官方网站：http://www.longta...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/lxbin">来自：	<span class="blog_title"> 小木的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/hemin1003/article/details/45879991","strategy":"OPENSEARCH","index":"11"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/hemin1003/article/details/45879991" target="_blank"  rel="noopener" title="如何使用java代码进行视频格式的转换（FLV）">
+		<h4 class="text-truncate oneline">
+				如何使用java代码进行视频格式的转换（FLV）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8352</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/hemin1003/article/details/45879991" target="_blank" rel="noopener" title="如何使用java代码进行视频格式的转换（FLV）">
+				<span class="desc oneline">如何使用java代码进行视频格式的转换（FLV）</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/hemin1003">来自：	<span class="blog_title"> Think Different</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/louis75168611/article/details/4300569","strategy":"OPENSEARCH","index":"12"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/louis75168611/article/details/4300569" target="_blank"  rel="noopener" title="flv-flash播放器">
+		<h4 class="text-truncate oneline">
+				flv-flash播放器		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					302</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/louis75168611/article/details/4300569" target="_blank" rel="noopener" title="flv-flash播放器">
+				<span class="desc oneline">下面是一个自己编写的一个flv-flash播放截图1 截图2 demo下载：http://download.csdn.net/source/1439735...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/louis75168611">来自：	<span class="blog_title"> louis75168611的技术空间</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_15457239/article/details/98234023","strategy":"OPENSEARCH","index":"13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_15457239/article/details/98234023" target="_blank"  rel="noopener" title="srs源码解析2【http-flv播放】">
+		<h4 class="text-truncate oneline">
+				srs<em>源码</em>解析2【http-flv播放】		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					239</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_15457239/article/details/98234023" target="_blank" rel="noopener" title="srs源码解析2【http-flv播放】">
+				<span class="desc oneline">目录前言：一、SRS中的http处理套路二、http-flv播放详情三、总结前言：http-flv和hls都是基于http协议的。在SRS中，http的处理借鉴了golang的http处理架构，但是也...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_15457239">来自：	<span class="blog_title"> like的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_61" data-pid="61"><iframe  src="https://adaccount.csdn.net/#/preview/575?m=bAAESScSQSLJvHcncSyEEEHAEbAcDLLpnEtDncHXcApJiiHnLpvynnLvSbbHQnWcQAAyEiESEnAitJntvXtvLJLffHnSAciSQStQ&k=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?d=2&k=&m=bAAESScSQSLJvHcncSyEEEHAEbAcDLLpnEtDncHXcApJiiHnLpvynnLvSbbHQnWcQAAyEiESEnAitJntvXtvLJLffHnSAciSQStQ"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/highlevels/article/details/99626949","strategy":"OPENSEARCH","index":"14"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/highlevels/article/details/99626949" target="_blank"  rel="noopener" title="【Docker初探】第七节：Alpine下编译Nginx，并使用nginx-http-flv-module搭建视频直播服务">
+		<h4 class="text-truncate oneline">
+				【Docker初探】第七节：Alpine下编译Nginx，并使用nginx-http-flv-module搭建视频直播服务		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					106</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/highlevels/article/details/99626949" target="_blank" rel="noopener" title="【Docker初探】第七节：Alpine下编译Nginx，并使用nginx-http-flv-module搭建视频直播服务">
+				<span class="desc oneline">相关资料：【Docker初探】第一节：Docker+Alpine+Openssh+Supervisor部署Linux基础环境【Docker初探】第二节：安装alpine-pkg-glibc，部署jav...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/highlevels">来自：	<span class="blog_title"> PPHT-bolg</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/taolinke/article/details/6068711","strategy":"OPENSEARCH","index":"15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/taolinke/article/details/6068711" target="_blank"  rel="noopener" title="linux下如何利用浏览器播放本地flv文件">
+		<h4 class="text-truncate oneline">
+				linux下如何利用浏览器播放本地flv文件		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3554</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/taolinke/article/details/6068711" target="_blank" rel="noopener" title="linux下如何利用浏览器播放本地flv文件">
+				<span class="desc oneline">虽然这里我写的东西比较少，比较简单，你看了可能觉得，哇，这么简单。但是，到达这里之前，我真的是找了好久，才知道这个方法。----------------------------------------...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/taolinke">来自：	<span class="blog_title"> 兼容并蓄终宽阔，若谷虚怀鱼自游</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/winshining/article/details/93606585","strategy":"OPENSEARCH","index":"16"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/winshining/article/details/93606585" target="_blank"  rel="noopener" title="高性能流媒体服务器nginx-http-live-module">
+		<h4 class="text-truncate oneline">
+				高性能流媒体服务器nginx-http-live-module		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1419</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/winshining/article/details/93606585" target="_blank" rel="noopener" title="高性能流媒体服务器nginx-http-live-module">
+				<span class="desc oneline">nginx-rtmp-module实现了开创性的工作，但是，实际上它的完成度并不高，缺少的功能和很多缺陷在前面的文章中已有提及。如果要在实际生产环境中使用，必须进行大量的修改。nginx-http-f...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/winshining">来自：	<span class="blog_title"> winshining的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/darkdragonking/article/details/40650733","strategy":"OPENSEARCH","index":"17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/darkdragonking/article/details/40650733" target="_blank"  rel="noopener" title="媒体格式分析之flv -- 基于FFMPEG">
+		<h4 class="text-truncate oneline">
+				媒体格式分析之flv -- 基于FFMPEG		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					420</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/darkdragonking/article/details/40650733" target="_blank" rel="noopener" title="媒体格式分析之flv -- 基于FFMPEG">
+				<span class="desc oneline">本来是应该先写一个媒体文件格式的简单讲解的，还没来得及写，以后再写。今天就先根据ffmpeg的flv.c的flv_demux这个结构体来讲解一下当前比较流行的媒体格式flv.FLV是FLASHVIDE...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/darkdragonking">来自：	<span class="blog_title"> 暗黑世界</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_22633333/article/details/96288603","strategy":"OPENSEARCH","index":"18"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_22633333/article/details/96288603" target="_blank"  rel="noopener" title="记录RTSP通过FFmpeg+nginx发布成rtmp和http-flv">
+		<h4 class="text-truncate oneline">
+				记录RTSP通过FFmpeg+nginx发布成rtmp和http-flv		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1293</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_22633333/article/details/96288603" target="_blank" rel="noopener" title="记录RTSP通过FFmpeg+nginx发布成rtmp和http-flv">
+				<span class="desc oneline">因为项目需要，最近在Windows上实现了rtsp通过FFmpeg+nginx(nginx-http-flv-module)发布成rtmp和http-flv给VLC或h5video(flv.js)播放...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22633333">来自：	<span class="blog_title"> RzzZ的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_62" data-pid="62"><iframe  src="https://adaccount.csdn.net/#/preview/758?m=cJfLJbvnnSJHDSiLLpSpLSJEEpLSSncUHcnUEfAScnAHiXDLbJnnAEnHtJEEyvmiHQSWQSSioXELbpopLtSvnSvLSbEEnvtoHcQQ&k=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?d=2&k=&m=cJfLJbvnnSJHDSiLLpSpLSJEEpLSSncUHcnUEfAScnAHiXDLbJnnAEnHtJEEyvmiHQSWQSSioXELbpopLtSvnSvLSbEEnvtoHcQQ"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/charleslei/article/details/51088380","strategy":"OPENSEARCH","index":"19"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/charleslei/article/details/51088380" target="_blank"  rel="noopener" title="HTTP-FLV的两种方式">
+		<h4 class="text-truncate oneline">
+				HTTP-FLV的两种方式		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/charleslei/article/details/51088380" target="_blank" rel="noopener" title="HTTP-FLV的两种方式">
+				<span class="desc oneline">目前，有两种Http-Flv的实现方式，一种是基于文件的方式，一种是基于包的方式两种Http-Flv的相同之处在于，都是HTTP方式输出，都是FLv格式两种Http-Flv的不同之处在于：1、架构上，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/charleslei">来自：	<span class="blog_title"> charleslei的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/z694644032/article/details/100084287","strategy":"BlogCommendHotData","index":"20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/z694644032/article/details/100084287" target="_blank"  rel="noopener" title="学会了这些技术，你离BAT大厂不远了">
+		<h4 class="text-truncate oneline">
+				学会了这些技术，你离BAT大厂不远了		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					11万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/z694644032/article/details/100084287" target="_blank" rel="noopener" title="学会了这些技术，你离BAT大厂不远了">
+				<span class="desc oneline">每一个程序员都有一个梦想，梦想着能够进入阿里、腾讯、字节跳动、百度等一线互联网公司，由于身边的环境等原因，不知道BAT等一线互联网公司使用哪些技术？或者该如何去学习这些技术？或者我该去哪些获取这些技术...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/z694644032">来自：	<span class="blog_title"> 平头哥的技术博文</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/j3T9Z7H/article/details/100179186","strategy":"BlogCommendHotData","index":"21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/j3T9Z7H/article/details/100179186" target="_blank"  rel="noopener" title="程序员真是太太太太太有趣了！！！">
+		<h4 class="text-truncate oneline">
+				程序员真是太太太太太有趣了！！！		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/j3T9Z7H/article/details/100179186" target="_blank" rel="noopener" title="程序员真是太太太太太有趣了！！！">
+				<span class="desc oneline">网络上虽然已经有了很多关于程序员的话题，但大部分人对这个群体还是很陌生。我们在谈论程序员的时候，究竟该聊些什么呢？各位程序员大佬们，请让我听到你们的声音！不管你是前端开发......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/j3T9Z7H">来自：	<span class="blog_title"> 程序猿DD</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_44543508/article/details/100192558","strategy":"BlogCommendHotData","index":"22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_44543508/article/details/100192558" target="_blank"  rel="noopener" title="史上最详细的IDEA优雅整合Maven+SSM框架（详细思路+附带源码）">
+		<h4 class="text-truncate oneline">
+				史上最详细的IDEA优雅整合Maven+SSM框架（详细思路+<em>附</em>带<em>源码</em>）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_44543508/article/details/100192558" target="_blank" rel="noopener" title="史上最详细的IDEA优雅整合Maven+SSM框架（详细思路+附带源码）">
+				<span class="desc oneline">网上很多整合SSM博客文章并不能让初探ssm的同学思路完全的清晰，可以试着关掉整合教程，摇两下头骨，哈一大口气，就在万事具备的时候，开整，这个时候你可能思路全无~中招了咩~，还有一些同学依旧在使用ec...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44543508">来自：	<span class="blog_title"> 程序员宜春的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_38106923/article/details/100603516","strategy":"BlogCommendHotData","index":"23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_38106923/article/details/100603516" target="_blank"  rel="noopener" title="1行Python代码制作动态二维码">
+		<h4 class="text-truncate oneline">
+				1行Python代码制作动态二维码		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_38106923/article/details/100603516" target="_blank" rel="noopener" title="1行Python代码制作动态二维码">
+				<span class="desc oneline">目录1、普通二维码2、艺术二维码3、动态二维码在GitHub上发现了一个比较有意思的项目，只需要一行Python代码就可以快捷方便生成普通二维码、艺术二维码(黑白/彩色)和动态GIF二维码。GitHu...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_38106923">来自：	<span class="blog_title"> 不脱发的程序猿</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_63" data-pid="63"><script type="text/javascript">
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div style="" id="' + s + '"></div>');
+            (window.slotbydup = window.slotbydup || []).push({
+                id: "u4221910",
+                container: s
+            });
+        })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" >
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=63&a=1405&c=0&k=&d=1&t=3&u=03642870e9b447c9917f726a0299afb9"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/kexuanxiu1163/article/details/100613498","strategy":"BlogCommendHotData","index":"24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/kexuanxiu1163/article/details/100613498" target="_blank"  rel="noopener" title="知乎上 40 个有趣回复，很精辟很提神">
+		<h4 class="text-truncate oneline">
+				知乎上 40 个有趣回复，很精辟很提神		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/kexuanxiu1163/article/details/100613498" target="_blank" rel="noopener" title="知乎上 40 个有趣回复，很精辟很提神">
+				<span class="desc oneline">点击蓝色“五分钟学算法”关注我哟加个“星标”，天天中午12:15，一起学算法作者|佚名来源|网络整理，版权归原作者所有，侵删。1交朋友的标准是什么？-Ques......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/kexuanxiu1163">来自：	<span class="blog_title"> 程序员吴师兄的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_40693171/article/details/100716766","strategy":"BlogCommendHotData","index":"25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_40693171/article/details/100716766" target="_blank"  rel="noopener" title="我花了一夜用数据结构给女朋友写个H5走迷宫游戏">
+		<h4 class="text-truncate oneline">
+				我花了一夜用数据结构给女朋友写个H5走迷宫游戏		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					13万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_40693171/article/details/100716766" target="_blank" rel="noopener" title="我花了一夜用数据结构给女朋友写个H5走迷宫游戏">
+				<span class="desc oneline">起因又到深夜了，我按照以往在csdn和公众号写着数据结构！这占用了我大量的时间！我的超越妹妹严重缺乏陪伴而怨气满满！而女朋友时常埋怨，认为数据结构这么抽象难懂的东西没啥作用，常会问道：天天写这玩意，有...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40693171">来自：	<span class="blog_title"> bigsai</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/ybhuangfugui/article/details/100913641","strategy":"BlogCommendHotData","index":"26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ybhuangfugui/article/details/100913641" target="_blank"  rel="noopener" title="让程序员崩溃的瞬间（非程序员勿入）">
+		<h4 class="text-truncate oneline">
+				让程序员崩溃的瞬间（非程序员勿入）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					18万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ybhuangfugui/article/details/100913641" target="_blank" rel="noopener" title="让程序员崩溃的瞬间（非程序员勿入）">
+				<span class="desc oneline">今天给大家带来点快乐，程序员才能看懂。来源：https://zhuanlan.zhihu.com/p/470665211.公司实习生找Bug2.在调试时，将断点设置在错误的位置3.当我有一个很棒的调试...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/ybhuangfugui">来自：	<span class="blog_title"> strongerHuang</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u014044812/article/details/100977312","strategy":"BlogCommendHotData","index":"27"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u014044812/article/details/100977312" target="_blank"  rel="noopener" title="用Python分析2000款避孕套，得出这些有趣的结论">
+		<h4 class="text-truncate oneline">
+				用Python分析2000款避孕套，得出这些有趣的结论		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u014044812/article/details/100977312" target="_blank" rel="noopener" title="用Python分析2000款避孕套，得出这些有趣的结论">
+				<span class="desc oneline">到现在为止，我们的淘宝教程已经写到了第四篇，前三篇分别是：第一篇：Python模拟登录淘宝，详细讲解如何使用requests库登录淘宝pc端。第二篇：淘宝自动登录2.0，新增Cookies序列化，教大...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014044812">来自：	<span class="blog_title"> 猪哥</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_40644291/article/details/101020537","strategy":"BlogCommendHotData","index":"28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_40644291/article/details/101020537" target="_blank"  rel="noopener" title="程序员必备几款软件（实用、开源）">
+		<h4 class="text-truncate oneline">
+				程序员必备几款软件（实用、开源）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1222</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_40644291/article/details/101020537" target="_blank" rel="noopener" title="程序员必备几款软件（实用、开源）">
+				<span class="desc oneline">目录Notepad++tinyccompiler(tcc编译器)Notepad++软件介绍程序员必备的文本编辑器，软件小巧高效，支持27种编程语言，兼容C,C++,Java,C#,XML,HTML,P...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40644291">来自：	<span class="blog_title"> 张亚楠的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_64" data-pid="64"><iframe  src="https://adaccount.csdn.net/#/preview/750?m=cLJnttLivAQtHDpcJnDpHSbnnEcJUAnfEbnpJQLHppJSXpbAfSHEynvQSHQbpJWQXJofpiiXnnSySvEbDSbJAHbiAnncSQnSSJJQ&k=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?d=2&k=&m=cLJnttLivAQtHDpcJnDpHSbnnEcJUAnfEbnpJQLHppJSXpbAfSHEynvQSHQbpJWQXJofpiiXnnSySvEbDSbJAHbiAnncSQnSSJJQ"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_42453117/article/details/101318601","strategy":"BlogCommendHotData","index":"29"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_42453117/article/details/101318601" target="_blank"  rel="noopener" title="一个即将走向社会的软件技术专业学生的感想">
+		<h4 class="text-truncate oneline">
+				一个即将走向社会的软件技术专业学生的感想		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4063</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_42453117/article/details/101318601" target="_blank" rel="noopener" title="一个即将走向社会的软件技术专业学生的感想">
+				<span class="desc oneline">不知道为什么，总是喜欢在晚上学习，好像晚上学习也更有效率，而且晚上我也比较喜欢瞎想。一望无垠的夜空，独自一个人站在阳台上，望着深邃的星空，便总会陷入沉思，或思索未来的生活，或怀念过往的人生。我为什么会...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42453117">来自：	<span class="blog_title"> wangweijun</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/lantian_123/article/details/101488841","strategy":"BlogCommendHotData","index":"30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/lantian_123/article/details/101488841" target="_blank"  rel="noopener" title="分享靠写代码赚钱的一些门路">
+		<h4 class="text-truncate oneline">
+				分享靠写代码赚钱的一些门路		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lantian_123/article/details/101488841" target="_blank" rel="noopener" title="分享靠写代码赚钱的一些门路">
+				<span class="desc oneline">作者mezod，译者josephchang10如今，通过自己的代码去赚钱变得越来越简单，不过对很多人来说依然还是很难，因为他们不知道有哪些门路。今天给大家分享一个精彩......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/lantian_123">来自：	<span class="blog_title"> Python之禅的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/lantian_123/article/details/101514976","strategy":"BlogCommendHotData","index":"31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/lantian_123/article/details/101514976" target="_blank"  rel="noopener" title="技术人员要拿百万年薪，必须要经历这9个段位">
+		<h4 class="text-truncate oneline">
+				技术人员要拿百万年薪，必须要经历这9个段位		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					7199</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lantian_123/article/details/101514976" target="_blank" rel="noopener" title="技术人员要拿百万年薪，必须要经历这9个段位">
+				<span class="desc oneline">很多人都问，技术人员如何成长，每个阶段又是怎样的，如何才能走出当前的迷茫，实现自我的突破。所以我结合我自己10多年的从业经验，总结了技术人员成长的9个段位，希望对大家的职......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/lantian_123">来自：	<span class="blog_title"> Python之禅的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/baron_leizhang/article/details/101793324","strategy":"BlogCommendHotData","index":"32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/baron_leizhang/article/details/101793324" target="_blank"  rel="noopener" title="为什么我不建议你在当前购买 5G 手机">
+		<h4 class="text-truncate oneline">
+				为什么我不建议你在当前购买 5G 手机		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/baron_leizhang/article/details/101793324" target="_blank" rel="noopener" title="为什么我不建议你在当前购买 5G 手机">
+				<span class="desc oneline">首发于公众号：BaronTalk，欢迎关注每年的八九月份都是各大厂商发布年自己旗舰机的时候，最近vivo、oppo、小米、华为、苹果接连发布了自己的年度旗舰，这当中除了苹果，其它厂商均发布了5G版本手...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/baron_leizhang">来自：	<span class="blog_title"> BaronTalk</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_41599858/article/details/102084565","strategy":"BlogCommendHotData","index":"33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_41599858/article/details/102084565" target="_blank"  rel="noopener" title="win10电脑工具整理 - 常用工具！">
+		<h4 class="text-truncate oneline">
+				win10电脑工具整理 - 常用工具！		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3005</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_41599858/article/details/102084565" target="_blank" rel="noopener" title="win10电脑工具整理 - 常用工具！">
+				<span class="desc oneline">如题，本文主要为博主对电脑上安装的一些软件，所做的整理，当做备份用吧。一、分类系统工具办公软件编程开发数据库相关图片视频工具网络及下载工具解压缩工具影音娱乐工具二、软件工具1.系统工具1.1.磁盘管理...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41599858">来自：	<span class="blog_title"> Alfred的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_65" data-pid="65"><div id="three_ad33" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=65&a=84&c=0&k=&d=1&t=3&u=790be39b8adf41e0a51fa7321f62fffa"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_40693171/article/details/102220448","strategy":"BlogCommendHotData","index":"34"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_40693171/article/details/102220448" target="_blank"  rel="noopener" title="第二弹！python爬虫批量下载高清大图">
+		<h4 class="text-truncate oneline">
+				第二弹！python爬虫批量下载高清大图		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_40693171/article/details/102220448" target="_blank" rel="noopener" title="第二弹！python爬虫批量下载高清大图">
+				<span class="desc oneline">文章目录前言下载免费高清大图下载带水印的精选图代码与总结前言在上一篇写文章没高质量配图？python爬虫绕过限制一键搜索下载图虫创意图片！中，我们在未登录的情况下实现了图虫创意无水印高清小图的批量下载...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40693171">来自：	<span class="blog_title"> bigsai</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/hyg0811/article/details/102366854","strategy":"BlogCommendHotData","index":"35"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/hyg0811/article/details/102366854" target="_blank"  rel="noopener" title="面试官，不要再问我三次握手和四次挥手">
+		<h4 class="text-truncate oneline">
+				面试官，不要再问我三次握手和四次挥手		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					12万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/hyg0811/article/details/102366854" target="_blank" rel="noopener" title="面试官，不要再问我三次握手和四次挥手">
+				<span class="desc oneline">三次握手和四次挥手是各个公司常见的考点，也具有一定的水平区分度，也被一些面试官作为热身题。很多小伙伴说这个问题刚开始回答的挺好，但是后面越回答越冒冷汗，最后就歇菜了。见过比较典型的面试场景是这样的:面...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/hyg0811">来自：	<span class="blog_title"> 猿人谷</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/z694644032/article/details/102452844","strategy":"BlogCommendHotData","index":"36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/z694644032/article/details/102452844" target="_blank"  rel="noopener" title="Java 爬虫遇到需要登录的网站，该怎么办？">
+		<h4 class="text-truncate oneline">
+				Java 爬虫遇到需要登录的网站，该怎么办？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8630</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/z694644032/article/details/102452844" target="_blank" rel="noopener" title="Java 爬虫遇到需要登录的网站，该怎么办？">
+				<span class="desc oneline">这是Java网络爬虫系列博文的第二篇，在上一篇Java网络爬虫，就是这么的简单中，我们简单的学习了一下如何利用Java进行网络爬虫。在这一篇中我们将简单的聊一聊在网络爬虫时，遇到需要登录的网站，我们该...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/z694644032">来自：	<span class="blog_title"> 平头哥的技术博文</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_42532128/article/details/102526334","strategy":"BlogCommendHotData","index":"37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_42532128/article/details/102526334" target="_blank"  rel="noopener" title="div+css实现水平/垂直/水平垂直居中超详解">
+		<h4 class="text-truncate oneline">
+				div+css实现水平/垂直/水平垂直居中超详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1531</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_42532128/article/details/102526334" target="_blank" rel="noopener" title="div+css实现水平/垂直/水平垂直居中超详解">
+				<span class="desc oneline">单个元素水平居中1.margin:0auto方法wrapper相对屏幕居中&amp;lt;divclass=&quot;wrapper&quot;&amp;gt;&amp;lt;/div&amp;gt;body{	width:100%;}.wrappe...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42532128">来自：	<span class="blog_title"> 丝丽家的大猴子</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/csdnnews/article/details/102548475","strategy":"BlogCommendHotData","index":"38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/csdnnews/article/details/102548475" target="_blank"  rel="noopener" title="为什么程序员在学习编程的时候什么都记不住？">
+		<h4 class="text-truncate oneline">
+				为什么程序员在学习编程的时候什么都记不住？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/csdnnews/article/details/102548475" target="_blank" rel="noopener" title="为什么程序员在学习编程的时候什么都记不住？">
+				<span class="desc oneline">在程序员的职业生涯中，记住所有你接触过的代码是一件不可能的事情！那么我们该如何解决这一问题？作者|DylanMestyanek译者|弯月，责编|屠敏出品|......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/csdnnews">来自：	<span class="blog_title"> CSDN资讯</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_66" data-pid="66"><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=66&a=87&c=0&k=&d=1&t=3&u=c16aae46b4ff4a48881349f9f2494f53"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u012365828/article/details/102559913","strategy":"BlogCommendHotData","index":"39"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u012365828/article/details/102559913" target="_blank"  rel="noopener" title="500行代码，教你用python写个微信飞机大战">
+		<h4 class="text-truncate oneline">
+				500行代码，教你用python写个微信飞机大战		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u012365828/article/details/102559913" target="_blank" rel="noopener" title="500行代码，教你用python写个微信飞机大战">
+				<span class="desc oneline">这几天在重温微信小游戏的飞机大战，玩着玩着就在思考人生了，这飞机大战怎么就可以做的那么好，操作简单，简单上手。帮助蹲厕族、YP族、饭圈女孩在无聊之余可以有一样东西让他们振作起来！让他们的左手/右手有节...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012365828">来自：	<span class="blog_title"> Python专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wangxueming/article/details/102561475","strategy":"BlogCommendHotData","index":"20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wangxueming/article/details/102561475" target="_blank"  rel="noopener" title="唐僧团队要裁员，你会裁谁？">
+		<h4 class="text-truncate oneline">
+				唐僧团队要裁员，你会裁谁？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wangxueming/article/details/102561475" target="_blank" rel="noopener" title="唐僧团队要裁员，你会裁谁？">
+				<span class="desc oneline">提问：
+
+西游记取经团为了节约成本，唐太宗需要在这个团队里裁掉一名队员，该裁掉哪一位呢，为什么?
+
+
+为了完成西天取经任务，组成取经团队，成员有唐僧、孙悟空、猪八戒、沙和尚、白龙马。
+高层领导： 观音...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/csdnnews/article/details/102577855","strategy":"BlogCommendHotData","index":"21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/csdnnews/article/details/102577855" target="_blank"  rel="noopener" title="唏嘘！2019榜单出炉：铁打的Python连续3年第一，它居然跌出前十？">
+		<h4 class="text-truncate oneline">
+				唏嘘！2019榜单出炉：铁打的Python连续3年第一，它居然跌出前十？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6763</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/csdnnews/article/details/102577855" target="_blank" rel="noopener" title="唏嘘！2019榜单出炉：铁打的Python连续3年第一，它居然跌出前十？">
+				<span class="desc oneline">IEEE Spectrum2019年度编程语言排行榜最近刚刚出炉，Python不出意外的又拿了个第一，但是意料之外的是，曾经大火的PHP，居然跌出了前十！PHP曾被大家称......</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/zhongyangzhong/article/details/102578044","strategy":"BlogCommendHotData","index":"22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zhongyangzhong/article/details/102578044" target="_blank"  rel="noopener" title="2019诺贝尔经济学奖得主：贫穷的本质是什么？">
+		<h4 class="text-truncate oneline">
+				2019诺贝尔经济学奖得主：贫穷的本质是什么？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3673</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhongyangzhong/article/details/102578044" target="_blank" rel="noopener" title="2019诺贝尔经济学奖得主：贫穷的本质是什么？">
+				<span class="desc oneline">2019年诺贝尔经济学奖，颁给了来自麻省理工学院的 阿巴希·巴纳吉（Abhijit Vinayak Banerjee）、艾丝特·杜芙若（Esther Duflo）夫妇和哈......</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Dakshesh/article/details/102588364","strategy":"BlogCommendHotData","index":"23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Dakshesh/article/details/102588364" target="_blank"  rel="noopener" title="linux：最常见的linux命令（centOS 7.6）">
+		<h4 class="text-truncate oneline">
+				linux：最常见的linux命令（centOS 7.6）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4038</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Dakshesh/article/details/102588364" target="_blank" rel="noopener" title="linux：最常见的linux命令（centOS 7.6）">
+				<span class="desc oneline">最常见，最频繁使用的20个基础命令如下：
+皮一下，这都是干货偶，大佬轻喷
+一、linux关机命令：
+1.shutdown命令安全地将系统关机（推荐）参数说明:
+[-r] 重启计算器。
+[-h] 关机后...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><script type="text/javascript" src="//rabc1.iteye.com/production/res/rxjg.js?pkcgstj=jm"></script></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/ityouknow/article/details/102597598","strategy":"BlogCommendHotData","index":"24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ityouknow/article/details/102597598" target="_blank"  rel="noopener" title="只因写了一段爬虫，公司200多人被抓！">
+		<h4 class="text-truncate oneline">
+				只因写了一段爬虫，公司200多人被抓！		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ityouknow/article/details/102597598" target="_blank" rel="noopener" title="只因写了一段爬虫，公司200多人被抓！">
+				<span class="desc oneline">“一个程序员写了个爬虫程序，整个公司200多人被端了。”
+
+“不可能吧！”
+
+刚从朋友听到这个消息的时候，我有点不太相信，做为一名程序员来讲，谁还没有写过几段爬虫呢？只因写爬虫程序就被端有点夸张了吧。...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_37907797/article/details/102618796","strategy":"BlogCommendHotData","index":"25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37907797/article/details/102618796" target="_blank"  rel="noopener" title="别在学习框架了，那些让你起飞的计算机基础知识。">
+		<h4 class="text-truncate oneline">
+				别在学习框架了，那些让你起飞的计算机基础知识。		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37907797/article/details/102618796" target="_blank" rel="noopener" title="别在学习框架了，那些让你起飞的计算机基础知识。">
+				<span class="desc oneline">我之前里的文章，写的大部分都是与计算机基础知识相关的，这些基础知识，就像我们的内功，如果在未来想要走的更远，这些内功是必须要修炼的。框架千变万化，而这些通用的底层知识，却是几乎不变的，了解了这些知识，...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/csdnnews/article/details/102634100","strategy":"BlogCommendHotData","index":"26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/csdnnews/article/details/102634100" target="_blank"  rel="noopener" title="100 美元一行代码，开源软件到底咋赚钱？">
+		<h4 class="text-truncate oneline">
+				100 美元一行代码，开源软件到底咋赚钱？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5460</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/csdnnews/article/details/102634100" target="_blank" rel="noopener" title="100 美元一行代码，开源软件到底咋赚钱？">
+				<span class="desc oneline">作者 | 顾钧责编 | 胡巍巍出品 | CSDN（ID：CSDNnews）很多创业公司苦恼于如何设计开源项目的商业模式，以下内容是笔者目前对此问题的摸索，权当抛砖引玉。开......</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_37969433/article/details/102637226","strategy":"BlogCommendHotData","index":"27"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_37969433/article/details/102637226" target="_blank"  rel="noopener" title="MySQL数据库—SQL汇总">
+		<h4 class="text-truncate oneline">
+				MySQL数据库—SQL汇总		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5871</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_37969433/article/details/102637226" target="_blank" rel="noopener" title="MySQL数据库—SQL汇总">
+				<span class="desc oneline">一、准备
+下文整理常见SQL语句的用法，使用MySQL5.7测试，参考了尚硅谷MySQL教程及用例。用例sql：
+链接: https://pan.baidu.com/s/1tb3-12MRNFjV8d...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/conconbenben/article/details/102649425","strategy":"BlogCommendHotData","index":"28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/conconbenben/article/details/102649425" target="_blank"  rel="noopener" title="必须要会回答的Java面试题（字符串篇）">
+		<h4 class="text-truncate oneline">
+				必须要会回答的Java面试题（字符串篇）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9651</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/conconbenben/article/details/102649425" target="_blank" rel="noopener" title="必须要会回答的Java面试题（字符串篇）">
+				<span class="desc oneline">最近很多学习java的小白问我字串相关的问题，觉得很有必要整理下，以方便初学者理解字符串以及应对今后面试中考官的提问。...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><script type="text/javascript" src="//rabc1.iteye.com/production/res/rxjg.js?pkcgstj=jm"></script></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/loongggdroid/article/details/102656177","strategy":"BlogCommendHotData","index":"29"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/loongggdroid/article/details/102656177" target="_blank"  rel="noopener" title="五款高效率黑科技神器工具，炸裂好用，省时间">
+		<h4 class="text-truncate oneline">
+				五款高效率黑科技神器工具，炸裂好用，省时间		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/loongggdroid/article/details/102656177" target="_blank" rel="noopener" title="五款高效率黑科技神器工具，炸裂好用，省时间">
+				<span class="desc oneline">loonggg读完需要4分钟速读仅需2分钟感觉我好久好久没有给大家分享高质量的软件和插件了。今天周末，难得在家休息一下，痛下决心，分享一些我认为的高效率工具软件给大家。废......</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/neal1991/article/details/102656213","strategy":"BlogCommendHotData","index":"30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/neal1991/article/details/102656213" target="_blank"  rel="noopener" title="黑客入门，从HTB开始">
+		<h4 class="text-truncate oneline">
+				黑客入门，从HTB开始		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/neal1991/article/details/102656213" target="_blank" rel="noopener" title="黑客入门，从HTB开始">
+				<span class="desc oneline">Hack the box 是国外的一个靶机平台，里面的靶机包含多种系统类型，并且里面可以利用的漏洞类型多种多样，有很多靶机其实非常贴近实战情景。因此 HTB 是一个很好的学习渗透测试靶场。
+
+
+
+之前...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_36903042/article/details/102656641","strategy":"BlogCommendHotData","index":"31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_36903042/article/details/102656641" target="_blank"  rel="noopener" title="动画：用动画给女朋友讲解 TCP 四次分手过程">
+		<h4 class="text-truncate oneline">
+				动画：用动画给女朋友讲解 TCP 四次分手过程		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_36903042/article/details/102656641" target="_blank" rel="noopener" title="动画：用动画给女朋友讲解 TCP 四次分手过程">
+				<span class="desc oneline">作者 |  小鹿
+来源 |  公众号：小鹿动画学编程
+
+写在前边
+大家好，我们又见面了，做为一个业余的动画师，上次的用动画的形式讲解 TCP 三次握手过程再各大平台收到了广大读者的喜爱，说文章有趣、有...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/hollis_chuang/article/details/102657937","strategy":"BlogCommendHotData","index":"32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/hollis_chuang/article/details/102657937" target="_blank"  rel="noopener" title="不就是SELECT COUNT语句吗，竟然能被面试官虐的体无完肤">
+		<h4 class="text-truncate oneline">
+				不就是SELECT COUNT语句吗，竟然能被面试官虐的体无完肤		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/hollis_chuang/article/details/102657937" target="_blank" rel="noopener" title="不就是SELECT COUNT语句吗，竟然能被面试官虐的体无完肤">
+				<span class="desc oneline">数据库查询相信很多人都不陌生，所有经常有人调侃程序员就是CRUD专员，这所谓的CRUD指的就是数据库的增删改查。
+在数据库的增删改查操作中，使用最频繁的就是查询操作。而在所有查询操作中，统计数量操作更...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_37907797/article/details/102661778","strategy":"BlogCommendHotData","index":"33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37907797/article/details/102661778" target="_blank"  rel="noopener" title="程序员必须掌握的核心算法有哪些？">
+		<h4 class="text-truncate oneline">
+				程序员必须掌握的核心算法有哪些？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37907797/article/details/102661778" target="_blank" rel="noopener" title="程序员必须掌握的核心算法有哪些？">
+				<span class="desc oneline">由于我之前一直强调数据结构以及算法学习的重要性，所以就有一些读者经常问我，数据结构与算法应该要学习到哪个程度呢？，说实话，这个问题我不知道要怎么回答你，主要取决于你想学习到哪些程度，不过针对这个问题，...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/yangjianrong1985/article/details/102675334","strategy":"BlogCommendHotData","index":"34"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/yangjianrong1985/article/details/102675334" target="_blank"  rel="noopener" title="如何优化MySQL千万级大表，我写了6000字的解读">
+		<h4 class="text-truncate oneline">
+				如何优化MySQL千万级大表，我写了6000字的解读		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yangjianrong1985/article/details/102675334" target="_blank" rel="noopener" title="如何优化MySQL千万级大表，我写了6000字的解读">
+				<span class="desc oneline">这是学习笔记的第2138篇文章
+
+
+
+千万级大表如何优化，这是一个很有技术含量的问题，通常我们的直觉思维都会跳转到拆分或者数据分区，在此我想做一些补充和梳理，想和大家做一些这方面的经验总结，也欢迎大家...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/dyc87112/article/details/102676581","strategy":"BlogCommendHotData","index":"35"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/dyc87112/article/details/102676581" target="_blank"  rel="noopener" title="面试最后一问：你有什么问题想问我吗？">
+		<h4 class="text-truncate oneline">
+				面试最后一问：你有什么问题想问我吗？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/dyc87112/article/details/102676581" target="_blank" rel="noopener" title="面试最后一问：你有什么问题想问我吗？">
+				<span class="desc oneline">尽管，我们之前分享了这么多关于面试的主题：
+
+高薪必备的一些Spring Boot高级面试题
+面试必问：设计模式遵循的面向对象设计原则！
+面试必问：怎么保证缓存与数据库的双写一致性？
+27道高频Spr...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/xufive/article/details/102676755","strategy":"BlogCommendHotData","index":"36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xufive/article/details/102676755" target="_blank"  rel="noopener" title="python 程序员进阶之路：从新手到高手的100个模块">
+		<h4 class="text-truncate oneline">
+				python 程序员进阶之路：从新手到高手的100个模块		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xufive/article/details/102676755" target="_blank" rel="noopener" title="python 程序员进阶之路：从新手到高手的100个模块">
+				<span class="desc oneline">在知乎和CSDN的圈子里，经常看到、听到一些 python 初学者说，学完基础语法后，不知道该学什么，学了也不知道怎么用，一脸的茫然。近日，CSDN的公众号推送了一篇博客，题目叫做《迷思：Python...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_37907797/article/details/102685204","strategy":"BlogCommendHotData","index":"37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37907797/article/details/102685204" target="_blank"  rel="noopener" title="大学四年，看过的优质书籍推荐">
+		<h4 class="text-truncate oneline">
+				大学四年，看过的优质书籍推荐		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37907797/article/details/102685204" target="_blank" rel="noopener" title="大学四年，看过的优质书籍推荐">
+				<span class="desc oneline">有时有些读者问我，数据结构与算法该怎么学？有书籍推荐的吗？Java 初学者该怎么学等等。今天我就给大家介绍一些我这几年看过的一些自认为优秀的书籍，由于我看的大部分书籍可以说都是通用的，所以如果你有时间...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/weixin_43943977/article/details/102691392","strategy":"BlogCommendHotData","index":"38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_43943977/article/details/102691392" target="_blank"  rel="noopener" title="Python——画一棵漂亮的樱花树（不同种樱花+玫瑰+圣诞树喔）">
+		<h4 class="text-truncate oneline">
+				Python——画一棵漂亮的樱花树（不同种樱花+玫瑰+圣诞树喔）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_43943977/article/details/102691392" target="_blank" rel="noopener" title="Python——画一棵漂亮的樱花树（不同种樱花+玫瑰+圣诞树喔）">
+				<span class="desc oneline">最近翻到一篇知乎，上面有不少用Python（大多是turtle库）绘制的树图，感觉很漂亮，我整理了一下，挑了一些我觉得不错的代码分享给大家（这些我都测试过，确实可以生成）
+one 樱花树
+
+ 动...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/lycyingO/article/details/102693626","strategy":"BlogCommendHotData","index":"39"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/lycyingO/article/details/102693626" target="_blank"  rel="noopener" title="还在收集资料？我这里有个github汇总">
+		<h4 class="text-truncate oneline">
+				还在收集资料？我这里有个github汇总		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lycyingO/article/details/102693626" target="_blank" rel="noopener" title="还在收集资料？我这里有个github汇总">
+				<span class="desc oneline">原创：小姐姐味道（微信公众号ID：xjjdog），欢迎分享，转载请保留出处。国内程序员都喜欢收集资料，但是又不看，github是重灾区。更有莫名其妙fork的，让人不得要......</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/csdnnews/article/details/102693777","strategy":"BlogCommendHotData","index":"40"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/csdnnews/article/details/102693777" target="_blank"  rel="noopener" title="程序员不懂浪漫？胡扯！">
+		<h4 class="text-truncate oneline">
+				程序员不懂浪漫？胡扯！		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/csdnnews/article/details/102693777" target="_blank" rel="noopener" title="程序员不懂浪漫？胡扯！">
+				<span class="desc oneline">程序员男朋友你的程序员男朋友为你做过什么暖心的事情呢？我的男朋友是一个程序员，他有很多大家在网络上吐槽的程序员的缺点，比如加班很多，没空陪我吃饭逛街看电影，比如说他有的时......</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/z694644032/article/details/102695164","strategy":"BlogCommendHotData","index":"41"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/z694644032/article/details/102695164" target="_blank"  rel="noopener" title="程序员成长的四个简单技巧，你 get 了吗？">
+		<h4 class="text-truncate oneline">
+				程序员成长的四个简单技巧，你 get 了吗？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/z694644032/article/details/102695164" target="_blank" rel="noopener" title="程序员成长的四个简单技巧，你 get 了吗？">
+				<span class="desc oneline">最近拜读了“阿里工程师的自我修养”手册，12 位技术专家分享生涯感悟来帮助我们这些菜鸡更好的成长，度过中年危机，我收获颇多，其中有不少的方法技巧和我正在使用的，这让我觉得我做的这些事情是对的，我走在了...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u013541140/article/details/102710138","strategy":"BlogCommendHotData","index":"42"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u013541140/article/details/102710138" target="_blank"  rel="noopener" title="Java 8：一文掌握 Lambda 表达式">
+		<h4 class="text-truncate oneline">
+				Java 8：一文掌握 Lambda 表达式		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u013541140/article/details/102710138" target="_blank" rel="noopener" title="Java 8：一文掌握 Lambda 表达式">
+				<span class="desc oneline">本文将介绍 Java 8 新增的 Lambda 表达式，包括 Lambda 表达式的常见用法以及方法引用的用法，并对 Lambda 表达式的原理进行分析，最后对 Lambda 表达式的优缺点进行一个总...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/xianlvfan2224/article/details/102722298","strategy":"BlogCommendHotData","index":"43"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xianlvfan2224/article/details/102722298" target="_blank"  rel="noopener" title="2020年秋招后端面经">
+		<h4 class="text-truncate oneline">
+				2020年秋招后端面经		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5822</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xianlvfan2224/article/details/102722298" target="_blank" rel="noopener" title="2020年秋招后端面经">
+				<span class="desc oneline">主要包含华为，网易互娱，广联达，科大讯飞，浦发，中兴，上海农商行这些已经拿offer的，还有京东（不小心把二面时间换了一下，等通知等三个月了），虾皮（一面挂），顺丰（sp专场一面之后没消息，秋招第一个...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_44198436/article/details/102734420","strategy":"BlogCommendHotData","index":"44"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_44198436/article/details/102734420" target="_blank"  rel="noopener" title="Python自动化完成tb喵币任务">
+		<h4 class="text-truncate oneline">
+				Python自动化完成tb喵币任务		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_44198436/article/details/102734420" target="_blank" rel="noopener" title="Python自动化完成tb喵币任务">
+				<span class="desc oneline">2019双十一，tb推出了新的活动，商店喵币，看了一下每天都有几个任务来领取喵币，从而升级店铺赚钱，然而我既想赚红包又不想干苦力，遂使用python来进行手机自动化操作，目测全网首发！
+
+用到的库：
+...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/yellowzf3/article/details/102739368","strategy":"BlogCommendHotData","index":"45"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/yellowzf3/article/details/102739368" target="_blank"  rel="noopener" title="从月薪3K的中专生，到身家千万的CTO！人生最大的对手，就是自已">
+		<h4 class="text-truncate oneline">
+				从月薪3K的中专生，到身家千万的CTO！人生最大的对手，就是自已		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yellowzf3/article/details/102739368" target="_blank" rel="noopener" title="从月薪3K的中专生，到身家千万的CTO！人生最大的对手，就是自已">
+				<span class="desc oneline">关注“技术领导力”博客，独家大厂干货推送
+
+文/Daniel.W
+
+
+
+David坐在我对面，窗外是梦境般的外滩夜景，繁星点点的璀璨灯火，散落在黄浦江两岸。我转过头对David说，你丫挺会享受啊，约我...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_37907797/article/details/102740903","strategy":"BlogCommendHotData","index":"46"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37907797/article/details/102740903" target="_blank"  rel="noopener" title="这应该是把计算机网络五层模型讲的最好是文章了，看不懂你打我">
+		<h4 class="text-truncate oneline">
+				这应该是把计算机网络五层模型讲的最好是文章了，看不懂你打我		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37907797/article/details/102740903" target="_blank" rel="noopener" title="这应该是把计算机网络五层模型讲的最好是文章了，看不懂你打我">
+				<span class="desc oneline">帅地：用心写好每一篇文章！
+
+前言
+天各一方的两台计算机是如何通信的呢？在成千上万的计算机中，为什么一台计算机能够准确着寻找到另外一台计算机，并且把数据发送给它呢？
+可能很多人都听说过网络通信的 5 ...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/ThinkWon/article/details/102744033","strategy":"BlogCommendHotData","index":"47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ThinkWon/article/details/102744033" target="_blank"  rel="noopener" title="Tomcat8性能优化">
+		<h4 class="text-truncate oneline">
+				Tomcat8性能优化		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ThinkWon/article/details/102744033" target="_blank" rel="noopener" title="Tomcat8性能优化">
+				<span class="desc oneline">文章目录授人以鱼不如授人以渔目的服务器资源Tomcat配置优化Linux环境安装运行Tomcat8AJP连接执行器（线程池）3种运行模式部署测试用的web项目查看服务器信息部署web应用使用Apach...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/csdnnews/article/details/102752202","strategy":"BlogCommendHotData","index":"48"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/csdnnews/article/details/102752202" target="_blank"  rel="noopener" title="ARM：供给中国 160 亿颗芯片，继续授权华为！">
+		<h4 class="text-truncate oneline">
+				ARM：供给中国 160 亿颗芯片，继续授权华为！		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/csdnnews/article/details/102752202" target="_blank" rel="noopener" title="ARM：供给中国 160 亿颗芯片，继续授权华为！">
+				<span class="desc oneline">Arm中国执行董事长兼CEO吴雄昂
+
+记者 | 胡巍巍
+
+出品 | CSDN（ID：CSDNnews）
+
+2019年5月15日，美国商务部将华为及其70家附属公司纳入实体清单。
+
+当时，还有消息称，A...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/u011225629/article/details/102756288","strategy":"BlogCommendHotData","index":"49"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u011225629/article/details/102756288" target="_blank"  rel="noopener" title="单点登录（SSO）">
+		<h4 class="text-truncate oneline">
+				单点登录（SSO）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8736</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u011225629/article/details/102756288" target="_blank" rel="noopener" title="单点登录（SSO）">
+				<span class="desc oneline">一、SSO（单点登录）介绍
+
+SSO英文全称Single SignOn，单点登录。SSO是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。它包括可以将这次主要的登录映射到其他应用...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/jhl19981125/article/details/102757634","strategy":"BlogCommendHotData","index":"50"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/jhl19981125/article/details/102757634" target="_blank"  rel="noopener" title="2019最新Java面试题，常见面试题及答案汇总">
+		<h4 class="text-truncate oneline">
+				2019最新Java面试题，常见面试题及答案汇总		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/jhl19981125/article/details/102757634" target="_blank" rel="noopener" title="2019最新Java面试题，常见面试题及答案汇总">
+				<span class="desc oneline">Java最新常见面试题 + 答案汇总
+1、面试题模块汇总
+面试题包括以下十九个模块：Java 基础、容器、多线程、反射、对象拷贝、Java Web 模块、异常、网络、设计模式、Spring/Sprin...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_37907797/article/details/102759257","strategy":"BlogCommendHotData","index":"51"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37907797/article/details/102759257" target="_blank"  rel="noopener" title="漫话：什么是 https ?这应该是全网把 https 讲的最好的一篇文章了">
+		<h4 class="text-truncate oneline">
+				漫话：什么是 https ?这应该是全网把 https 讲的最好的一篇文章了		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37907797/article/details/102759257" target="_blank" rel="noopener" title="漫话：什么是 https ?这应该是全网把 https 讲的最好的一篇文章了">
+				<span class="desc oneline">今天这篇文章，讲通过对话的形式，让你由浅入深着知道，为什么 Https 是安全的。
+
+
+
+
+一、对称加密
+
+一禅：在每次发送真实数据之前，服务器先生成一把密钥，然后先把密钥传输给客户端。之后服务器给客...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/dengjin20104042056/article/details/102761876","strategy":"BlogCommendHotData","index":"52"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/dengjin20104042056/article/details/102761876" target="_blank"  rel="noopener" title="【Windows】Window中的常用快捷键">
+		<h4 class="text-truncate oneline">
+				【Windows】Window中的常用快捷键		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5488</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/dengjin20104042056/article/details/102761876" target="_blank" rel="noopener" title="【Windows】Window中的常用快捷键">
+				<span class="desc oneline">00. 目录
+文章目录00. 目录01.电脑快捷键大全02.Ctrl快捷键03.Alt快捷键04.Shift快捷键05.常规键盘快捷键
+01.电脑快捷键大全
+单独按Windows：显示或隐藏 “开始”...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/m0_37907797/article/details/102767860","strategy":"BlogCommendHotData","index":"53"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37907797/article/details/102767860" target="_blank"  rel="noopener" title="为什么你学不会递归？告别递归，谈谈我的经验">
+		<h4 class="text-truncate oneline">
+				为什么你学不会递归？告别递归，谈谈我的经验		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37907797/article/details/102767860" target="_blank" rel="noopener" title="为什么你学不会递归？告别递归，谈谈我的经验">
+				<span class="desc oneline">可能很多人在大一的时候，就已经接触了递归了，不过，我敢保证很多人初学者刚开始接触递归的时候，是一脸懵逼的，我当初也是，给我的感觉就是，递归太神奇了！
+可能也有一大部分人知道递归，也能看的懂递归，但在实...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/wo541075754/article/details/102768249","strategy":"BlogCommendHotData","index":"54"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wo541075754/article/details/102768249" target="_blank"  rel="noopener" title="面试官，不要再问我“Java虚拟机类加载机制”了">
+		<h4 class="text-truncate oneline">
+				面试官，不要再问我“Java虚拟机类加载机制”了		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9271</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wo541075754/article/details/102768249" target="_blank" rel="noopener" title="面试官，不要再问我“Java虚拟机类加载机制”了">
+				<span class="desc oneline">关于Java虚拟机类加载机制往往有两方面的面试题：根据程序判断输出结果和讲讲虚拟机类加载机制的流程。其实这两类题本质上都是考察面试者对Java虚拟机类加载机制的了解。
+面试题试水
+现在有这样一道判断程...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/qq_36903042/article/details/102770331","strategy":"BlogCommendHotData","index":"55"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_36903042/article/details/102770331" target="_blank"  rel="noopener" title="大学四年，分享看过的优质书籍">
+		<h4 class="text-truncate oneline">
+				大学四年，分享看过的优质书籍		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_36903042/article/details/102770331" target="_blank" rel="noopener" title="大学四年，分享看过的优质书籍">
+				<span class="desc oneline">数据结构与算法是我在大学里第一次接触到的，当时学了很多其他安卓、网页之类的，一开始就感觉纳闷，数据结构和算法学这个有啥用，再加上上的是一所野鸡大学，老师讲的也是模模糊糊，平时做项目、练习也几乎不用数据...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/Hallo_ZM/article/details/102774244","strategy":"BlogCommendHotData","index":"56"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Hallo_ZM/article/details/102774244" target="_blank"  rel="noopener" title="2019双十一淘宝天猫刷喵币">
+		<h4 class="text-truncate oneline">
+				2019双十一淘宝天猫刷喵币		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Hallo_ZM/article/details/102774244" target="_blank" rel="noopener" title="2019双十一淘宝天猫刷喵币">
+				<span class="desc oneline">实现步骤
+
+下载并安装Auto.js
+官网网址:https://hyb1996.github.io/AutoJs-Docs
+Github地址:https://github.com/hyb1996/Au...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/harvic880925/article/details/102774769","strategy":"BlogCommendHotData","index":"57"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/harvic880925/article/details/102774769" target="_blank"  rel="noopener" title="有哪些让程序员受益终生的建议">
+		<h4 class="text-truncate oneline">
+				有哪些让程序员受益终生的建议		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/harvic880925/article/details/102774769" target="_blank" rel="noopener" title="有哪些让程序员受益终生的建议">
+				<span class="desc oneline">从业五年多，辗转两个大厂，出过书，创过业，从技术小白成长为基层管理，联合几个业内大牛回答下这个问题，希望能帮到大家，记得帮我点赞哦。
+
+敲黑板！！！读了这篇文章，你将知道如何才能进大厂，如何实现财务自...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/hollis_chuang/article/details/102776191","strategy":"BlogCommendHotData","index":"58"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/hollis_chuang/article/details/102776191" target="_blank"  rel="noopener" title="最近程序员频繁被抓，如何避免面向监狱编程！？">
+		<h4 class="text-truncate oneline">
+				最近程序员频繁被抓，如何避免面向监狱编程！？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/hollis_chuang/article/details/102776191" target="_blank" rel="noopener" title="最近程序员频繁被抓，如何避免面向监狱编程！？">
+				<span class="desc oneline">最近，有关程序员因为参与某些项目开发导致被起诉，甚至被判刑的事件发生的比较多：
+某程序员因为接了个外包，帮别人写了个软件，结果这个软件被用于赌博导致被抓。
+某公司利用爬虫抓取用户信息，最后被发现，导致...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-report-click='{"mod":"popu_387","dest":"https://blog.csdn.net/petterp/article/details/102779131","strategy":"BlogCommendHotData","index":"59"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/petterp/article/details/102779131" target="_blank"  rel="noopener" title="一文搞懂什么是TCP/IP协议">
+		<h4 class="text-truncate oneline">
+				一文搞懂什么是TCP/IP协议		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8249</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/petterp/article/details/102779131" target="_blank" rel="noopener" title="一文搞懂什么是TCP/IP协议">
+				<span class="desc oneline">什么是TCP/IP协议?
+
+计算机与网络设备之间如果要相互通信,双方就必须基于相同的方法.比如如何探测到通信目标.由哪一边先发起通信,使用哪种语言进行通信,怎样结束通信等规则都需要事先确定.不同的硬件...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+                    <div class="recommend-item-box type_hot_word">
+                                        <div class="content clearfix">
+                        <div class="float-left">
+                                                <span>
+                            <a href="https://www.csdn.net/gather_11/NtjakgxsLWRvd25sb2Fk.html" target="_blank">
+                            c#获取当前代码文件目录</a>
+                        </span>
+                                                <span>
+                            <a href="https://www.csdn.net/gather_1e/NtjakgysLWRvd25sb2Fk.html" target="_blank">
+                            c# int 转数组</a>
+                        </span>
+                                                <span>
+                            <a href="https://www.csdn.net/gather_15/NtjakgzsLWRvd25sb2Fk.html" target="_blank">
+                            c#通讯录管理</a>
+                        </span>
+                                                <span>
+                            <a href="https://www.csdn.net/gather_15/Ntjakg0sLWRvd25sb2Fk.html" target="_blank">
+                            c# 中文ascii</a>
+                        </span>
+                                                <span>
+                            <a href="https://www.csdn.net/gather_1e/Ntjakg1sLWRvd25sb2Fk.html" target="_blank">
+                            c#电话客服</a>
+                        </span>
+                                                <span>
+                            <a href="https://www.csdn.net/gather_10/Ntjakg2sLWRvd25sb2Fk.html" target="_blank">
+                            c#开发管理系统实例</a>
+                        </span>
+                                                <span>
+                            <a href="https://www.csdn.net/gather_18/Ntjakg3sLWRvd25sb2Fk.html" target="_blank">
+                            c#三个条件判断</a>
+                        </span>
+                                                <span>
+                            <a href="https://www.csdn.net/gather_19/Ntjakg4sLWRvd25sb2Fk.html" target="_blank">
+                            c# mvc过滤器</a>
+                        </span>
+                                                <span>
+                            <a href="https://www.csdn.net/gather_1a/Ntjakg5sLWRvd25sb2Fk.html" target="_blank">
+                            c# 鼠标缩放图像</a>
+                        </span>
+                                                <span>
+                            <a href="https://www.csdn.net/gather_1e/NtzaAgwsLWRvd25sb2Fk.html" target="_blank">
+                            c# 空间后方交会</a>
+                        </span>
+                                                </div>
+                    </div>
+                                        </div>
+                                    <div class="recommend-loading-box">
+                    <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+                </div>
+                <div class="recommend-end-box">
+                    <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+                </div>
+            </div>
+                            <div class="template-box">
+                    <span>©️2019 CSDN</span><span class="point"></span>
+                <span>皮肤主题: 大白</span>
+                <span> 设计师:
+                                            CSDN官方博客                                    </span>
+                </div>
+                    </main>
+        <aside class="blog_container_aside">
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/qq_15267543">
+                <img src="https://profile.csdnimg.cn/6/E/1/3_qq_15267543" class="avatar_pic" username='qq_15267543'>
+                                    <img src="https://g.csdnimg.cn/static/user-reg-year/1x/5.png" class="user-years">
+                            </a>
+            
+        </div>
+        <div class="user-info d-flex flex-column profile-intro-name-box">
+            <div>
+                                <span class="name csdn-tracking-statistics tracking-click "   data-report-click='{"mod":"popu_379"}' username='qq_15267543'>
+                    <a href="https://blog.csdn.net/qq_15267543" class="" id="uid" title='安卓界的小学生'>
+                        安卓界的小学生                    </a>
+                </span>
+                            </div>
+            <div class="profile-intro-name-boxFooter">
+                                    <div class="personal-home-page" style='right:-96px;'><a target="_blank" href="https://me.csdn.net/qq_15267543">TA的个人主页 ></a></div>
+                                <div class="profile-intro-name-boxOpration">
+                                            <div class='profile-personal-letter'>
+                            <a id='profile-personal-alink' href="" target="_blank" rel="noopener">私信</a>
+                        </div>
+                        <div class="opt-box d-flex  flex-column">
+                            <span class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_379"}'>
+                                                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent" style='padding:0;'>关注</a>
+                                                            </span>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="1">
+                            <dt><a href="https://blog.csdn.net/qq_15267543?t=1">原创</a></dt>
+                <dd><a href="https://blog.csdn.net/qq_15267543?t=1"><span class="count">1</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="0">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">0</span></dd>
+        </dl>
+        <dl class="text-center" title="4">
+            <dt>获赞</dt>
+            <dd><span class="count">4</span></dd>
+        </dl>
+        <dl class="text-center" title="0">
+            <dt>评论</dt>
+            <dd><span class="count">0</span></dd>
+        </dl>
+        <dl class="text-center" title="130">
+            <dt>访问</dt>
+            <dd><span class="count">130</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl class="aside-box-footerClassify">
+            <dt>等级:</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="1级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-1"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>周排名:</dt>
+            <dd>
+                <a class="grade-box-rankA" href="https://blog.csdn.net/rank/writing_rank" target="_blank">
+                    -                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>积分:</dt>
+            <dd title="16">
+                16            </dd>
+        </dl>
+        <dl title="暂无排名">
+            <dt>总排名:</dt>
+            <dd>
+                <a class="grade-box-rankA" href="https://blog.csdn.net/rank/writing_rank_total" target="_blank">
+                    -                </a>
+            </dd>
+        </dl>
+    </div>
+    <div class="aside-box-footer">
+                
+    </div>
+</div>
+<script>
+    function watchBtnChange(flag, username) {
+        $('span.blog-expert-button-follow').each(function(index) {
+            if (flag) {
+                if ($(this).attr("data-name") == username) {
+                    $(this).html('<span class="hover-hide">已关注</span><span class="hover-show">取消</span>').removeClass('btn-red-follow').addClass('btn-gray-follow attented');
+                }
+            } else {
+                if ($(this).attr("data-name") == username) {
+                    $(this).html("关注").addClass('btn-red-follow').removeClass('btn-gray-follow attented');
+                }
+            }
+        })
+        if (username == $('p.csdn-tracking-statistics').attr("username")) {
+            if (flag) {
+                $('#btnAttent').addClass("attented").text("已关注").removeClass('btn-red-hollow').addClass('btn-gray-hollow');
+                changeFans(1)
+            } else {
+                $('#btnAttent').text("关注").addClass('btn-red-hollow').removeClass('btn-gray-hollow attented');
+                changeFans(-1)
+            }
+        }
+
+
+    }
+
+    function changeFans(num) {
+        if ($('#fan').text().indexOf('+') < 0) {
+            $('#fan').text(parseInt($('#fan').text()) + num);
+        } else {
+            $('#fanBox').attr('title', parseInt($('#fanBox').attr('title')) + num);
+        }
+    }
+    window.csdn = window.csdn ? window.csdn : {};
+    window.csdn.watchBtnChange = watchBtnChange;
+</script><div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56"><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3032528",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=56&a=76&c=0&k=&d=1&t=3&u=c4014cc368d642bd8cdbdd4c4c4c57bb"></div>    </div>
+</div>
+    <div id="asideCategory" class="aside-box"
+         style="display:block!important;">
+    <h3 class="aside-title">分类专栏</h3>
+    <div class="aside-content">
+        <ul>
+                            <li class="">
+                    <a class="clearfix"
+                       href="https://blog.csdn.net/qq_15267543/article/category/9489954">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151132530.png" alt="">
+                                                <span class="title oneline">java</span>
+                                                    <span class="count float-right">1篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                    <a class="clearfix"
+                       href="https://blog.csdn.net/qq_15267543/article/category/9489955">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140145169.png" alt="">
+                                                <span class="title oneline">协议解析</span>
+                                                    <span class="count float-right">1篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                    <a class="clearfix"
+                       href="https://blog.csdn.net/qq_15267543/article/category/6496062">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140158853.png" alt="">
+                                                <span class="title oneline">android</span>
+                                                    <span class="count float-right">1篇</span>
+                                            </a>
+                </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideArchive" class="aside-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_15267543/article/month/2019/11">
+                    2019年11月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-report-view='{"mod":"popu_521"}'>
+							<li>
+
+					<a href="https://blog.csdn.net/qq_15267543/article/details/102930590" >
+                                                FLV-java你所关心的，我这里都有。附源码。非FFmpeg相关，纯java人肉解析。手写FLV。H264 AAC转FLV                    </a>
+					<p class="read">阅读数 <span>126</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57"><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3163270",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=57&a=77&c=0&k=&d=1&t=3&u=23e6050a40994a7ba15310b388d73487"></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+<script src="https://g.csdnimg.cn/user-tooltip/1.9/user-tooltip.js"  type="text/javascript"></script>
+    </div>
+                </div>
+
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+    	<ul class="meau-list">
+		<li class="btn-like-box long-width">
+			<button class=" long-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount">4</p>
+			</button>
+		</li>
+		<li class="to-commentBox" id = 'sharePost' data-report-click='{"mod":"popu_794","dest":"https://blog.csdn.net/qq_15267543/article/details/102930590"}'>
+			<a class="btn-comments low-height hover-box" >
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-share"></use>
+				</svg>
+				<span class="hover-show text">海报</span>
+				<p class="">
+				</p>
+			</a>
+			<a href="https://blogdev.blog.csdn.net/article/details/99646245" target="view_window">
+				<div class = 'shareSuggest' id = 'shareSuggest'>
+					分享海报说明
+					<svg class="shareIcon" aria-hidden="true">
+						<use xlink:href="#csdnc-help"></use>
+					</svg>
+					<div class = 'shareTriangle'></div>
+				</div>
+			</a>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+				<a id="btnQrShare" class="bds_weixin clear-share-style" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+								<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+											</ul>
+		</li>
+        		<li class="to-commentBox to-reward">
+			<a class="btn-comments low-height hover-box" title="打赏">
+				<svg class="hover-hide" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<g transform="translate(-1398.000000, -486.000000)" fill-rule="nonzero">
+							<g transform="translate(1398.000000, 486.000000)">
+								<path d="M0,12 C0,16.287187 2.287187,20.2487113 6,22.3923048 C9.7128129,24.5358984 14.2871871,24.5358984 18,22.3923048 C21.712813,20.2487113 24,16.287187 24,12 C24,5.37258296 18.627417,0 12,0 C5.372583,0 0,5.37258296 0,12 Z" id="路径" fill-opacity="0.3" fill="#FF5A52"></path>
+								<path d="M2.09340659,11.9505494 C2.09340659,15.4721673 3.97216734,18.7262766 7.02197798,20.4870856 C10.0717886,22.2478946 13.8293103,22.2478946 16.8791209,20.4870856 C19.9289316,18.7262766 21.8076923,15.4721673 21.8076923,11.9505494 C21.8076923,6.50659974 17.3944991,2.09340659 11.9505495,2.09340659 C6.50659977,2.09340659 2.09340659,6.50659974 2.09340659,11.9505494 Z" id="路径" fill="#F63D47"></path>
+								<path d="M11.3005025,5.28638434 L12.7115578,5.28638434 L12.7115578,6.87854416 L14.1105528,6.87854416 C14.4,6.39607148 14.6592965,5.89550609 14.8884422,5.37081705 L16.1849246,5.82313519 C15.99799,6.23926787 15.7929648,6.58906055 15.5758794,6.88457507 L18,6.88457507 L18,9.84575109 L16.6733668,9.84575109 L16.6733668,8.03647857 L7.33869347,8.03647857 L7.33869347,9.85781291 L6,9.85781291 L6,6.87854416 L8.51457286,6.87854416 C8.31557789,6.52875147 8.08040201,6.1910206 7.80904523,5.86535155 L9.08140703,5.4009716 C9.39497488,5.80504246 9.67236181,6.29957695 9.92562814,6.88457507 L11.3065327,6.88457507 L11.3065327,5.28638434 L11.3005025,5.28638434 Z M12.8571429,13.9657994 C12.6552823,15.5675992 12.2332101,16.6234672 11.5848095,17.1394027 C10.8813559,17.8053195 9.1991844,18.2312662 6.54441188,18.4292415 L6,17.2233922 C8.22046642,17.1394027 9.68854339,16.8454395 10.3919969,16.3415024 C11.0098127,15.8735609 11.3768319,15.0456644 11.4930547,13.8578129 L12.8571429,13.9657994 Z M16.8571429,12.1435272 L16.8571429,15.9892245 L15.5161905,15.9892245 L15.5161905,13.3067319 L9.05523809,13.3067319 L9.05523809,16.1435272 L7.71428571,16.1435272 L7.71428571,12.1435272 L16.8571429,12.1435272 L16.8571429,12.1435272 Z M8.28571429,8.71495577 L15.7142857,8.71495577 L15.7142857,11.5720986 L8.28571429,11.5720986 L8.28571429,8.71495577 L8.28571429,8.71495577 Z M14.5714286,10.4292415 L14.5714286,9.28638434 L10,9.28638434 L10,10.4292415 L14.5714286,10.4292415 Z M12.9579832,16.1435272 C14.8187275,16.4853162 16.4993998,16.9018717 18,17.3931934 L17.2436975,18.4292415 C15.635054,17.8311106 13.9783914,17.3664911 12.2857143,17.0407235 L12.9579832,16.1435272 L12.9579832,16.1435272 Z" id="形状" fill="#FFFFFF"></path>
+							</g>
+						</g>
+					</g>
+				</svg>
+				<span class="hover-show text">打赏</span>
+			</a>
+							<div id="reward" class="reward-box">
+	<p class="rewad-title">打赏<span class="reward-close"><svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span></p>
+	<dl>
+		<dd><a href="javascript:;"><img src="https://profile.csdnimg.cn/6/E/1/3_qq_15267543" alt=""></a></dd>
+		<dt>
+			<p class="blog-name">安卓界的小学生</p>
+			<p class="blog-discript">“你的鼓励将是我创作的最大动力”</p>
+		</dt>
+	</dl>
+	<div class="money-box">
+        			            	<span class="choosed choose_money" data-id="5">5C币</span>
+			        							<span class="choose_money" data-id="10">10C币</span>
+			        							<span class="choose_money" data-id="20">20C币</span>
+			        							<span class="choose_money" data-id="50">50C币</span>
+			        							<span class="choose_money" data-id="100">100C币</span>
+			        							<span class="choose_money" data-id="200">200C币</span>
+			        	</div>
+	<div class="sure-box">
+		<p class="is-have-money"><a class="reward-sure">确定</a></p>
+	</div>
+</div>
+
+					</li>
+        		<!--脉脉曝光外链-->
+		<li>
+			<a class="btn-maimai low-height hover-box btn-comments" title="脉脉" target="_blank" href="https://i.csdn.net/#/account/bind?utm_source=blogMaiMai">
+				<img class="hover-hide maimai-icon" src="https://csdnimg.cn/release/phoenix/static_blog/images/maimai_icon.png">
+				<img class="hover-show  maimai-bg" src="https://csdnimg.cn/release/phoenix/static_blog/images/maimai_bg.png?v1">
+			</a>
+		</li>
+	</ul>
+</div>
+<div id = 'tool-post-common'>
+	<div class = 'tool_post_box'>
+		<img class = 'tool_post_img' src="https://csdnimg.cn/release/phoenix/write/assets/postShareBack.png" alt="">
+		<div id = 'shareCode'></div>
+	</div>
+</div>
+<div id="share-bg-shadow">
+<div id="share-qrcode-box">
+    <h3>分享到微信朋友圈</h3>
+    <div class='qrcode-img-box'>
+        <a class="btn-close">×</a>
+        <div id='shareQrCode'></div>
+	</div>
+    <p>扫一扫，手机浏览</p>
+</div>
+</div>
+<script>
+		var imgReal = new Image();
+		imgReal.src = "https://csdnimg.cn/release/phoenix/write/assets/postShareBack.png"
+</script>
+<script type=text/javascript crossorigin src="https://csdnimg.cn/release/phoenix/production/qrcode-7c90a92189.min.js"></script>
+<script src="//g.csdnimg.cn/??sharewx/1.2.1/sharewx.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/collection-box/1.1.2/collection-box.js?t=201908091" type="text/javascript"></script>
+<script>
+    var recommendCount = 80;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 0;
+    var articleId = "102930590";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/qq_15267543/article/details/102930590";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "FLV-java你所关心的，我这里都有。附源码。非FFmpeg相关，纯java人肉解析。手写FLV。H264 AAC转FLV - qq_15267543的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+	var highlight = ["FLV-java","\u5173\u5fc3","\u91cc","\u90fd\u6709","\u9644","\u6e90\u7801"];//高亮数组
+
+    var share_card_url = 'https://blog.csdn.net/qq_15267543/article/shareArticleCardPage?article_id=102930590'
+    var RecommendBlogExpertList = [{"user_name":"gisam","nick_name":"\u6211\u4e0d\u662fgg","avatar":"https:\/\/profile.csdnimg.cn\/D\/7\/A\/3_gisam","is_expert":false,"article_count":52,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"winshining","nick_name":"\u672a\u592e\u5343\u57ce","avatar":"https:\/\/profile.csdnimg.cn\/E\/A\/C\/3_winshining","is_expert":false,"article_count":32,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"caowenjing123","nick_name":"caowenjing123","avatar":"https:\/\/profile.csdnimg.cn\/0\/A\/0\/3_caowenjing123","is_expert":false,"article_count":4,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"string_kai","nick_name":"StringKai","avatar":"https:\/\/profile.csdnimg.cn\/E\/9\/3\/3_string_kai","is_expert":false,"article_count":21,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"Car_eye","nick_name":"riky_car","avatar":"https:\/\/profile.csdnimg.cn\/9\/B\/C\/3_car_eye","is_expert":false,"article_count":79,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"rain_meter","nick_name":"rain_meter","avatar":"https:\/\/profile.csdnimg.cn\/5\/A\/3\/3_rain_meter","is_expert":false,"article_count":1,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"zhengbin6072","nick_name":"galen6","avatar":"https:\/\/profile.csdnimg.cn\/9\/5\/7\/3_zhengbin6072","is_expert":false,"article_count":50,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"lxbin","nick_name":"\u6c34\u58a8\u718a\u732b","avatar":"https:\/\/profile.csdnimg.cn\/F\/5\/9\/3_lxbin","is_expert":false,"article_count":75,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"hemin1003","nick_name":"MinboHe","avatar":"https:\/\/profile.csdnimg.cn\/7\/4\/3\/3_hemin1003","is_expert":false,"article_count":283,"rank":"5000+"},{"user_name":"louis75168611","nick_name":"louis75168611","avatar":"https:\/\/profile.csdnimg.cn\/4\/3\/D\/3_louis75168611","is_expert":false,"article_count":3,"rank":"\u5343\u91cc\u4e4b\u5916"}];
+	var articleType = 1;
+	var CopyrightContent = '';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+<div class="skin-boxshadow"></div>
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+    <!-- 高亮未与 markdown兼容  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.5.5/ckeditor/plugins/chart/chart.css" />
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.5.5/ckeditor/plugins/chart/lib/chart.min.js"></script>
+    <script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.5.5/ckeditor/plugins/chart/widget2chart.js"></script>
+    <script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f91259fb12.js" /></script>
+<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.5.5/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            qr: {
+                isShow: false,
+            }
+        }
+    }
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/iconfont/csdnc-c439e66521.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-5ecc0938b3.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-384afd6a7a.min.js"></script>
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-e2b6be7b58.min.js"></script>
+<script src="//g.csdnimg.cn/??login-box/1.0.7/login-box.js,login-box/1.0.7/login-auto.js,copyright/1.0.3/copyright.js" type="text/javascript"></script>
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+    var persentSet = 1;
+</script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/linkCatcher/linkCatcher-3a08af3a5f.js"></script>
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+    <script src="//g.csdnimg.cn/baidu-search/1.0.2/baidu-search.js"  type="text/javascript"></script>
+</html>
